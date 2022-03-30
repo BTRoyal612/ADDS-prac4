@@ -1,12 +1,12 @@
 #include "Reverse.h"
-#include "TruckLoads.h"
+#include "Truckloads.h"
 #include <iostream>
 #include <string>
 
 using namespace std;
 
 int main() {
-    TruckLoads* t = new TruckLoads();
+    Truckloads* t = new Truckloads();
     Reverse* re = new Reverse();
     int num, crates, load;
     string letters;

@@ -1,7 +1,7 @@
-#include "TruckLoads.h"
+#include "Truckloads.h"
 #include <ctype.h>
 
-int TruckLoads::numTrucks(int numCrates, int loadSize) {
+int Truckloads::numTrucks(int numCrates, int loadSize) {
     if (!isdigit(numCrates) || !isdigit(loadSize)) return -1;
 
     if (numCrates < 0 || loadSize < 0) return -1;
