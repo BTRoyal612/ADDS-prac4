@@ -2,17 +2,17 @@
 #include <string>
 
 int helperDigit(int numb, int reverse) {
-    reverse = reverse*10 + numb%10;
     if (numb < 10) {
         return reverse;
     }
+    reverse = reverse*10 + numb%10;
 
     return helperDigit(numb/10, reverse);
 }
 
 int Reverse::reverseDigit(int numb) {
     if (numb < 0) return -1;
-    return helperDigit(numb/10, numb%10);
+    return helperDigit(numb, numb);
 }
 
 std::string helperString(std::string letters, std::string reverse, int index) {
