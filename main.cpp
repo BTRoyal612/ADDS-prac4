@@ -3,7 +3,6 @@
 #include "EfficientTruckloads.h"
 #include <iostream>
 #include <string>
-#include <ctype.h>
 
 using namespace std;
 
@@ -14,10 +13,32 @@ int main() {
     int num, crates, load;
     string letters;
 
-    cin >> num >> letters >> crates >> load;
-    
-    cout << re->reverseDigit(num) << endl;
-    cout << re->reverseString(letters) << endl;
-    cout << t->numTrucks(crates, load) << endl;
-    cout << et->numTrucks(crates, load) << endl;
+    cin >> num;
+    if (cin.fail()) {
+        cin.clear();
+        cout << -1 << endl;
+    } else cout << re->reverseDigit(num) << endl;
+
+    cin >> letters;
+    if (cin.fail()) {
+        cin.clear();
+        cout << "ERROR" << endl;
+    } else cout << re->reverseString(letters) << endl;
+
+    cin >> crates;
+    if (cin.fail()) {
+        cin.clear();
+        cout << -1 << endl;
+        cout << -1 << endl;
+    } else {
+        cin >> load;
+        if (cin.fail()) {
+            cin.clear();
+            cout << -1 << endl;
+            cout << -1 << endl;
+        } else {
+            cout << t->numTrucks(crates, load) << endl;
+            cout << et->numTrucks(crates, load) << endl;
+        }
+    }
 }

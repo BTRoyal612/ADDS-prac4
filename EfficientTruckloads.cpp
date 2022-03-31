@@ -1,10 +1,9 @@
 #include "EfficientTruckloads.h"
 #include <ctype.h>
 #include <map>
+#include <iostream>
 
 int EfficientTruckloads::numTrucks(int numCrates, int loadSize) {
-    if (isalpha(numCrates) || isalpha(loadSize)) return -1;
-
     if (numCrates < 0 || loadSize < 0) return -1;
 
     if (numCrates == 0 || loadSize == 0) return 0;
@@ -13,13 +12,10 @@ int EfficientTruckloads::numTrucks(int numCrates, int loadSize) {
         return 1;
     }
 
-    int c1, c2;
-    if (numCrates%2 == 0) {
-        c1 = numCrates/2;
-        c2 = numCrates/2;
-    } else {
-        c1 = numCrates/2;
-        c2 = numCrates/2 + 1;
+    int c1 = numCrates/2;
+    int c2 = numCrates/2;
+    if (numCrates%2 != 0) {
+        c2++;
     }
 
     int temp;
