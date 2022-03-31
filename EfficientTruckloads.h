@@ -1,9 +1,11 @@
 #ifndef EFFICIENTTRUCKLOADS
 #define EFFICIENTTRUCKLOADS
 
+#include <map>
+
 class EfficientTruckloads {
     private:
-        int* memo;
+        std::map<int, int> memo;
     public:
         int numTrucks(int numCrates, int loadSize);
 };
